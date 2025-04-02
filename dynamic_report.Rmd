@@ -66,19 +66,7 @@ print(device_plot)
 print(activity_plot)
 ```
 
-## Creativity
-Creativity is demonstrated in my project by collecting data and generating statistical outputs in the form of of bar charts, by taking a creative focus on generating reflective conclusions that are relevant in our everyday lives. I started off by making a Google Form which I later sent out to my friends who are all university students at University of Auckland. I have modified the form in such a way that the data collected conformed in formats that could directly generate graphs. Such as restricting the inputs to numeric answers, multiple choice options, or text for more dynamic.I also included some funny relevant images which adhere to my research topic to make it more interesting. As well as the coding part I have incorporated some creative attempts by using different levels of headings to make it easier to read, and coloured bar charts to make it more visually engaging. 
 
-## Learning Reflection
-One important idea I have learnt from Module 2, from creating web-based dynamic report systems is that data input have to be strictly collected in certain formats so that the raw data can be directly outputted as graphs. Initially, I had trouble converting my raw data into graphs as they concatenated numeric and textual values. I would be interested inn exploring more about data technology in the areas of further advanced coding in R Markdown as well as more creative flares to add colours and textures to the webpage to make it more visually appealing. Overall, this project has helped me further strengthen my skills at using different technologies as well as relevant data that helps reflect a real life issue.
-
-## Appendix
-```{r file='exploration.R', eval=FALSE, echo=TRUE}
-
-```
-```{r file='dynamic_report.Rmd', eval=FALSE, echo=TRUE}
-
-```
 
 The best pet to have is a r best_pet of course!
 
