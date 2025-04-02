@@ -1,0 +1,85 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+```
+
+## The distributions of hours, device, and activity people go online for.
+
+This is a research on how many hours people spend online daily, what type of device people prefer to use, as well as the type of activity people engage in when they are online. Which are shown below in bar charts in respective order.
+
+```{r, echo=FALSE}
+library(tidyverse)
+
+#Read the csv file
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTevQZMH97P-mhvKExyXsTEWAcZ2vu98EjmGyTjcD7ZBRffnBv_GJdfTaBqg13A2wod7tx47MzXrE9J/pub?gid=316309048&single=true&output=csv"
+
+logged_data <- read_csv(csv_file)
+
+#Renaming the columns
+latest_data <- logged_data %>%
+  rename(
+    hours = 3,
+    device = 4,
+    activity = 5,
+  )
+
+#Summary
+hours_summary <- latest_data %>%
+  summarise(
+    min_hours = min(hours),
+    max_hours = max(hours),
+    length_hours = length(hours),
+  )
+
+#Plotting bar graphs 
+hours_plot <- ggplot(data = latest_data) +
+  geom_bar(aes(x = hours),
+           fill = "#B2C248") +
+  labs(x = "Hours spent on phone", y ="Count", title = "Distribution of Hours")
+
+device_plot <- ggplot(data = latest_data) +
+  geom_bar(aes(x = device),
+           fill = "#B2C248") +
+  labs(x = "What type of device is used", y ="Count", title = "Distribution of Device")
+
+activity_plot <- ggplot(data = latest_data) +
+  geom_bar(aes(x = activity),
+           fill = "#B2C248") +
+  labs(x = "What do they do on their device", y ="Count", title = "Distribution of Actiivty")
+
+#Printing summary
+print(hours_summary)
+
+
+#Printing charts
+print(hours_plot)
+print(device_plot)
+print(activity_plot)
+```
+
+## Creativity
+Creativity is demonstrated in my project by collecting data and generating statistical outputs in the form of of bar charts, by taking a creative focus on generating reflective conclusions that are relevant in our everyday lives. I started off by making a Google Form which I later sent out to my friends who are all university students at University of Auckland. I have modified the form in such a way that the data collected conformed in formats that could directly generate graphs. Such as restricting the inputs to numeric answers, multiple choice options, or text for more dynamic.I also included some funny relevant images which adhere to my research topic to make it more interesting. As well as the coding part I have incorporated some creative attempts by using different levels of headings to make it easier to read, and coloured bar charts to make it more visually engaging. 
+
+## Learning Reflection
+One important idea I have learnt from Module 2, from creating web-based dynamic report systems is that data input have to be strictly collected in certain formats so that the raw data can be directly outputted as graphs. Initially, I had trouble converting my raw data into graphs as they concatenated numeric and textual values. I would be interested inn exploring more about data technology in the areas of further advanced coding in R Markdown as well as more creative flares to add colours and textures to the webpage to make it more visually appealing. Overall, this project has helped me further strengthen my skills at using different technologies as well as relevant data that helps reflect a real life issue.
+
+## Appendix
+```{r file='exploration.R', eval=FALSE, echo=TRUE}
+
+```
+```{r file='dynamic_report.Rmd', eval=FALSE, echo=TRUE}
+
+```
+
+The best pet to have is a r best_pet of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
